@@ -40,10 +40,10 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
-  const newArr = arr.sort((a,b) =>{
+  arr.sort((a,b) =>{
     return a > b
   })
-  return newArr
+  return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,10 +56,10 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
-  const newArr = arr.sort((a,b)=>{
+  arr.sort((a,b)=>{
     return a > b
   });
-  return newArr;
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,10 +72,10 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
-  const newArr = arr.sort((a,b)=>{
+  arr.sort((a,b)=>{
     return a<b
   });
-  return newArr;
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,10 +90,10 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
-  const newArr = arr.sort((a,b)=>{
+   arr.sort((a,b)=>{
     return a > b
   })
-  return newArr
+  return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
-  const newArr = arr.sort((a,b)=>{
+  arr.sort((a,b)=>{
     return a.price > b.price;
   });
   return arr;
@@ -127,6 +127,20 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  arr.sort((a,b)=>{
+
+    if (a.toLowerCase() < b.toLowerCase()){
+      return -1;
+    } 
+    if (a.toLowerCase() > b.toLowerCase()){
+      return 1;
+    } 
+
+    return 0;
+
+  });
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -137,6 +151,13 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+
+  arr.sort((a,b)=>{
+
+    return b.length - a.length;
+
+  });
+  return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -299,7 +320,7 @@ describe('Testing challenge 6', () => {
 
 xdescribe('Testing challenge 7', () => {
   test('It should alphabetize without regard to capitalization', () => {
-    expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual([ 'alert', 'Alice', 'apple', 'Average' ]);
+    expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual(['alert', 'Alice', 'apple', 'Average']);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
     expect(ans.slice(0,2)).toEqual(expect.arrayContaining([ 'Alphabet','alphabet']));
     expect(ans.slice(2)).toStrictEqual(['carrot', 'Zebra']);
