@@ -129,7 +129,7 @@ let starWarsData = [{
 const returnNames = (arr) => {
   // Solution code here...
   const newArr = arr.reduce((acc,currnet)=>{
-    return  acc + currnet.name;
+    return  acc.concat(currnet.name)
   },[]);
   return newArr;
 };
@@ -144,6 +144,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  const newStr = str.split("").reduce((acc,currnet)=>{
+    return currnet+acc
+  },'')
+
+  return newStr
+
 };
 
 /* ------------------------------------------------------------------------------------------------
