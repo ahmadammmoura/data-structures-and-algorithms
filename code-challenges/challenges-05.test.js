@@ -147,7 +147,7 @@ const reversedString = (str) => {
   const newStr = str.split("").reduce((acc,currnet)=>{
     return currnet+acc
   },'')
-
+  
   return newStr
 
 };
