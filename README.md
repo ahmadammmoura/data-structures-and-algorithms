@@ -8,6 +8,8 @@ code challenge 2 [array-insert-shift](https://github.com/ahmadammmoura/data-stru
 
 code challenge 3 [array-binary-search](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/array-binary-search.md)
 
+code challenge 4 [Linked List](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list.md)
+
 ## ===================================
 
 See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
