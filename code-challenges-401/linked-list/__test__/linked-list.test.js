@@ -82,13 +82,16 @@ describe('Linked List Insertions', () => {
 
   it('Can successfully insert a node before a node located in the middle of a linked list', () => {
     const ll = new LinkedList();
-    ll.append('a');
-    ll.append('b');
-    ll.append('c');
-    ll.insertBefore('b', 'z');
-    expect(ll.head.value).toEqual('a');
-    expect(ll.head.next.value).toEqual('z');
-    expect(ll.head.next.next.next).toEqual(null);
+    ll.append('4');
+    ll.append('5');
+    ll.append('6');
+    ll.insertBefore('5', 'tic');
+    expect(ll.head.value).toEqual('4');
+    expect(ll.head.next.value).toEqual('tic');
+    expect(ll.head.next.next.value).toEqual('5');
+    expect(ll.head.next.next.next.value).toEqual('6');
+    expect(ll.head.next.next.next.next).toEqual(null);
+
   });
 
   it('Can successfully insert a node before the first node of a linked list', () => {

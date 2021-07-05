@@ -1,4 +1,4 @@
-const Node = require('./node');
+const Node = require("./node");
 class LinkedList {
   constructor() {
     this.head = null;
@@ -19,12 +19,12 @@ class LinkedList {
 
   toString() {
     let current = this.head;
-    let string = '';
+    let string = "";
     while (current) {
       string += `{${current.value}}->`;
       current = current.next;
       if (!current) {
-        string += 'NULL';
+        string += "NULL";
       }
     }
     return string;
@@ -32,54 +32,59 @@ class LinkedList {
 
   includes(val) {
     let current = this.head;
-    while(current){
-      if(current.value === val) {
+    while (current) {
+      if (current.value === val) {
         return true;
       }
       current = current.next;
     }
-    if (current === undefined){
+    if (current === undefined) {
       return false;
     }
   }
-  append(val){
+  append(val) {
     const newNode = new Node(val);
-    if(!this.head){
+    if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
-    }else{
+    } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
   }
 
-  insertAfter(value,newVal){
-    let newValue =new Node(newVal);
+  insertAfter(value, newVal) {
+    let newValue = new Node(newVal);
 
     let current = this.head;
 
-    while(current.value !== value){
+    while (current.value !== value) {
       current = current.next;
     }
     newValue.next = current.next;
     current.next = newValue;
   }
 
-  insertBefore(value,newVal){
-    let newValue =new Node(newVal);
+  insertBefore(value, newVal) {
+    let newNode = new Node(newVal);
 
     let current = this.head;
 
-    while(current.value !== value){
-
-      current = current.next;
+    if (current.value === value) {
+      this.head = newNode;
+      newNode.next = current;
+    } else {
+      while (current.value !== value) {
+        if (current.next.value === value) {
+          newNode.next = current.next;
+          // console.log(newNode)
+          current.next = newNode;
+          return this.toString();
+        }
+        current = current.next;
+      }
     }
-    newValue.next = current.next;
-    current.next = newValue;
   }
-
 }
-
-
 
 module.exports = LinkedList;
