@@ -1,4 +1,4 @@
- Singly Linked List
+ Singly Linked List 2
 
 ### What is a Singly Linked List?
   * consists of nodes
