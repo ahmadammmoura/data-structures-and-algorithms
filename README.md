@@ -10,6 +10,7 @@ code challenge 3 [array-binary-search](https://github.com/ahmadammmoura/data-str
 
 code challenge 4 [Linked List](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list.md)
 
+code challenge 4 [linked-list-insertions](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-insertions.md)
 ## ===================================
 
 See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
