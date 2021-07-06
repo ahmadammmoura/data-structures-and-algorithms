@@ -1,9 +1,9 @@
-const Node = require("./node");
+const Node = require('./node');
 class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.length;
+    this.length = 0 ;
   }
   insert(val) {
     let newNode = new Node(val);
@@ -19,12 +19,12 @@ class LinkedList {
 
   toString() {
     let current = this.head;
-    let string = "";
+    let string = '';
     while (current) {
       string += `{${current.value}}->`;
       current = current.next;
       if (!current) {
-        string += "NULL";
+        string += 'NULL';
       }
     }
     return string;
@@ -42,15 +42,16 @@ class LinkedList {
       return false;
     }
   }
-  append(val) {
+  append(val){
     const newNode = new Node(val);
-    if (!this.head) {
+    if(!this.head){
       this.head = newNode;
       this.tail = this.head;
-    } else {
+    }else{
       this.tail.next = newNode;
       this.tail = newNode;
     }
+    this.length++;
   }
 
   insertAfter(value, newVal) {
@@ -63,6 +64,7 @@ class LinkedList {
     }
     newValue.next = current.next;
     current.next = newValue;
+    this.length++;
   }
 
   insertBefore(value, newVal) {
@@ -83,6 +85,28 @@ class LinkedList {
         }
         current = current.next;
       }
+    }
+    this.length++;
+  }
+
+  kthFromEnd(k) {
+    let counter = 1;
+    let current = this.head;
+
+    if (this.length - k < 0) {return 'not found';}
+    else if (k === this.length) {return 'not found';}
+    else if (k < 0) {return 'you enterd negative number';}
+    else {
+      while (this.length - k > counter) {
+        current = current.next;
+        counter++;
+      }
+      if(counter !== this.length){
+        return `happy path ${current.value}`;
+      }else{
+        return current.value;
+      }
+
     }
   }
 }

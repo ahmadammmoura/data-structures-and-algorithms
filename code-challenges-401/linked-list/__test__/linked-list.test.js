@@ -125,3 +125,60 @@ describe('Linked List Insertions', () => {
     expect(ll.head.next.next.next).toEqual(null);
   });
 });
+
+describe('linked-list-kth',()=>{
+
+  it('Where k is not a positive integer',()=>{
+    const ll = new LinkedList();
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+    ll.append(4);
+    ll.append(5);
+    expect(ll.kthFromEnd(-5)).toBe('you enterd negative number');
+  });
+  it('Where k and the length of the list are the same',()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    ll.append('b');
+    ll.append('c');
+    ll.append('d');
+    ll.append('e');
+    expect(ll.kthFromEnd(5)).toBe('not found');
+  });
+  it('Where k is greater than the length of the linked list',()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    ll.append('b');
+    ll.append('c');
+    ll.append('d');
+    ll.append('e');
+    expect(ll.kthFromEnd(8)).toBe('not found');
+  });
+  it('Where k is not a positive integer',()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    ll.append('b');
+    ll.append('c');
+    ll.append('d');
+    ll.append('e');
+    expect(ll.kthFromEnd(-8)).toBe('you enterd negative number');
+  });
+  it('Where the linked list is of a size 1',()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    expect(ll.kthFromEnd(0)).toBe('a');
+    expect(ll.kthFromEnd(1)).toBe('not found');
+    expect(ll.kthFromEnd(-1)).toBe('you enterd negative number');
+  });
+  it('where k is not at the end, but somewhere in the middle of the linked list',()=>{
+    const ll = new LinkedList();
+    ll.append('a');
+    ll.append('b');
+    ll.append('c');
+    ll.append('d');
+    ll.append('e');
+    expect(ll.kthFromEnd(2)).toBe('happy path c');
+
+  });
+});
