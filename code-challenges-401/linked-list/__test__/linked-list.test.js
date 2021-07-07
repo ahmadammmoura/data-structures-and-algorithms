@@ -232,5 +232,6 @@ describe('zip testing',()=>{
     let result = zip(ll,bb);
     console.log(result);
     expect(result).toBe('{a}->{b}->{c}->{d}->{e}->NULL');
+    // just for pull
   });
 });
