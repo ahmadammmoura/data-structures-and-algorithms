@@ -3,7 +3,7 @@ class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
-    this.length = 0 ;
+    this.length = 0;
   }
   insert(val) {
     let newNode = new Node(val);
@@ -42,12 +42,12 @@ class LinkedList {
       return false;
     }
   }
-  append(val){
+  append(val) {
     const newNode = new Node(val);
-    if(!this.head){
+    if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
-    }else{
+    } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
@@ -93,22 +93,77 @@ class LinkedList {
     let counter = 1;
     let current = this.head;
 
-    if (this.length - k < 0) {return 'not found';}
-    else if (k === this.length) {return 'not found';}
-    else if (k < 0) {return 'you enterd negative number';}
-    else {
+    if (this.length - k < 0) {
+      return 'not found';
+    } else if (k === this.length) {
+      return 'not found';
+    } else if (k < 0) {
+      return 'you enterd negative number';
+    } else {
       while (this.length - k > counter) {
         current = current.next;
         counter++;
       }
-      if(counter !== this.length){
+      if (counter !== this.length) {
         return `happy path ${current.value}`;
-      }else{
+      } else {
         return current.value;
       }
-
     }
   }
 }
 
-module.exports = LinkedList;
+
+
+const zip = (list1, list2) =>{
+  let newList = new LinkedList();
+
+  if (!list1.length) {
+    newList = list2;
+    return newList.toString();
+  } else if (!list2.length) {
+    newList = list1;
+    return newList.toString();
+  }
+
+  const zipLength = list1.length + list2.length;
+  let counter = 0;
+  let numbers = list1.head;
+  let letters = list2.head;
+  let stopNumbers = false;
+  let stopLetters = false;
+
+  while (counter <= zipLength) {
+    if (counter % 2 === 1) {
+      if (!numbers) {
+        counter++;
+        stopNumbers = true;
+      }
+      if (!stopNumbers) {
+        newList.append(numbers.value);
+        numbers = numbers.next;
+        counter++;
+      }
+    }
+    if (counter % 2 === 0) {
+      if (!numbers) {
+        counter++;
+        stopLetters = true;
+      }
+      if (!stopLetters) {
+        newList.append(letters.value);
+        letters = letters.next;
+        counter++;
+      }
+    }
+  }
+
+  return newList.toString();
+};
+
+
+
+module.exports = {
+  LinkedList,
+  zip,
+};

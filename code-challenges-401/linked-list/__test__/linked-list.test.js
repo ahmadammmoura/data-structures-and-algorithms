@@ -1,5 +1,5 @@
 'use strict';
-const LinkedList = require('../linked-list');
+const {LinkedList,zip} = require('../linked-list');
 
 describe('Linked List', () => {
   it('Can successfully instantiate an empty linked list', () => {
@@ -180,5 +180,57 @@ describe('linked-list-kth',()=>{
     ll.append('e');
     expect(ll.kthFromEnd(2)).toBe('happy path c');
 
+  });
+});
+
+describe('zip testing',()=>{
+  it('merge two lists same length',()=>{
+    let ll = new LinkedList();
+    let bb = new LinkedList();
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+    ll.append(4);
+    ll.append(5);
+
+    bb.append('a');
+    bb.append('b');
+    bb.append('c');
+    bb.append('d');
+    bb.append('e');
+
+    let result = zip(ll,bb);
+    console.log(result);
+    expect(result).toBe('{a}->{1}->{b}->{2}->{c}->{3}->{d}->{4}->{e}->{5}->NULL');
+  });
+
+
+  it('merge two lists first only',()=>{
+    let ll = new LinkedList();
+    let bb = new LinkedList();
+    ll.append(1);
+    ll.append(2);
+    ll.append(3);
+    ll.append(4);
+    ll.append(5);
+
+    let result = zip(ll,bb);
+    console.log(result);
+    expect(result).toBe('{1}->{2}->{3}->{4}->{5}->NULL');
+  });
+
+  it('merge two lists first only',()=>{
+    let ll = new LinkedList();
+    let bb = new LinkedList();
+    bb.append('a');
+    bb.append('b');
+    bb.append('c');
+    bb.append('d');
+    bb.append('e');
+
+
+    let result = zip(ll,bb);
+    console.log(result);
+    expect(result).toBe('{a}->{b}->{c}->{d}->{e}->NULL');
   });
 });
