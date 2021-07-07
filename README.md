@@ -13,6 +13,9 @@ code challenge 4 [Linked List](https://github.com/ahmadammmoura/data-structures-
 code challenge 4 [linked-list-insertions](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-insertions.md)
 
 code challenge 4 [linked-list-kth](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-kth.md)
+
+code challenge 4 [linked-list-zip](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-zip.md)
+
 ## ===================================
 
 See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
