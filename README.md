@@ -15,6 +15,7 @@ code challenge 4 [linked-list-insertions](https://github.com/ahmadammmoura/data-
 code challenge 4 [linked-list-kth](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-kth.md)
 
 code challenge 4 [linked-list-zip](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-zip.md)
+code challenge 4 [stack and queue](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/stack-queue.md)
 
 ## ===================================
 
