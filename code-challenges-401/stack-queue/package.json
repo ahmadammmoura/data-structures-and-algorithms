@@ -1,0 +1,17 @@
+{
+  "name": "stack-queue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stack-queue.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "watch": "jest --verbose --coverage --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "jest": "^27.0.6"
+  }
+}
