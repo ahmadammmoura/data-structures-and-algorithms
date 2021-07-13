@@ -8,14 +8,19 @@ code challenge 2 [array-insert-shift](https://github.com/ahmadammmoura/data-stru
 
 code challenge 3 [array-binary-search](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/array-binary-search.md)
 
-code challenge 4 [Linked List](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list.md)
+code challenge 5 [Linked List](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list.md)
 
-code challenge 4 [linked-list-insertions](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-insertions.md)
+code challenge 6 [linked-list-insertions](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-insertions.md)
 
-code challenge 4 [linked-list-kth](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-kth.md)
+code challenge 7 [linked-list-kth](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-kth.md)
 
-code challenge 4 [linked-list-zip](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-zip.md)
-code challenge 4 [stack and queue](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/stack-queue.md)
+code challenge 8 [linked-list-zip](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/linked-list-zip.md)
+code challenge 9 [stack and queue](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/stack-queue.md)
+
+code challenge 4 [pseudo Queue](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/PseudoQueue.md)
+
+
+code challenge 4 [animal-shelter](https://github.com/ahmadammmoura/data-structures-and-algorithms/blob/main/code-challenges-401/animal.md)
 
 ## ===================================
 
