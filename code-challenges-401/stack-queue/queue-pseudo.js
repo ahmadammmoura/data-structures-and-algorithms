@@ -6,23 +6,27 @@ class PseudoQueue {
   constructor() {
     this.front = new Stack();
     this.back = new Stack();
-    this.length = this.front.length + this.back.length;
+    this.length = 0;
   }
 
   enqueue(val) {
-    this.front.push(val);
+    this.back.push(val);
     this.length++;
   }
 
-  // dequeue() {
-  //   if (this.back.length) {
-  //     this.length--;
-  //     return this.back.pop();
-  //   }
+  dequeue() {
+    if(this.front.length){
+      this.front.pop(this.front.peek());
+      this.length--;
+    }else{
+      while(!this.back.isEmpty()){
+        this.front.push(this.back.pop());
+      }
+      this.front.pop();
+      this.length--;
+    }
+  }
 
-  //   this.length--;
-  //   return this.back.pop();
-  // }
 
 }
 
