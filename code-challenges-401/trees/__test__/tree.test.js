@@ -86,3 +86,34 @@ describe('binary tree search', () => {
     expect(binarySearchTree.contains(88)).toEqual(false);
   });
 });
+
+
+describe('FIND MAX TEST', () => {
+  it('RETURN empty tree IF THE TREE EMPTY', () => {
+
+    let tree = new BinaryTree();
+
+    expect(tree.findMax()).toEqual('empty tree');
+
+  });
+  it('if theres no rigth in the tree must return the root node value', () => {
+    let root = new Node(10);
+    root.left = new Node(5);
+    root.left.left = new Node(3);
+    root.left.left.left = new Node(2);
+    let tree = new BinaryTree(root);
+    expect(tree.findMax()).toEqual(10);
+  });
+
+  it('return the max number in the tree', () => {
+    let root = new Node(10);
+    root.left = new Node(5);
+    root.right = new Node(15);
+    root.left.left = new Node(3);
+    root.right.right = new Node(20);
+    root.right.left = new Node(14);
+    root.left.left.left = new Node(2);
+    let tree = new BinaryTree(root);
+    expect(tree.findMax()).toEqual(20);
+  });
+});
