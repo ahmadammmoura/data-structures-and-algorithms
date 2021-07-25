@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
@@ -33,6 +33,16 @@ class BinaryTree {
     }
     traverse(this.root);
     return data;
+  }
+
+  findMax() {
+    let current = this.root;
+    if (!current) return 'empty tree';
+    if (!current.right) return current.value;
+    while (current.right) {
+      current = current.right;
+    }
+    return current.value;
   }
 }
 
