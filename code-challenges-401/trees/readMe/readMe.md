@@ -20,4 +20,4 @@
 #### theres alot of logic and i like it
 
 ## UML 
-![img](./bts.jpg)
+![img](../img/bts.jpg)

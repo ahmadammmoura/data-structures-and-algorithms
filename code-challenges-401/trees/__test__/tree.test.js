@@ -3,6 +3,7 @@
 const Node = require('../node');
 const BinaryTree = require('../binaryTree');
 const BST = require('../binarySearchTree');
+const breathFirst = require('../tree-breath');
 
 
 describe('node test', () => {
@@ -115,5 +116,68 @@ describe('FIND MAX TEST', () => {
     root.left.left.left = new Node(2);
     let tree = new BinaryTree(root);
     expect(tree.findMax()).toEqual(20);
+  });
+});
+
+
+describe('Breadth-first ', () => {
+  it('if the tree is empty ', () => {
+
+    let tree = new BinaryTree();
+
+    expect(breathFirst(tree)).toEqual('empty tree');
+
+  });
+  it('if not empty tree and theres no right', () => {
+    let root = new Node(10);
+    root.left = new Node(5);
+    root.left.left = new Node(3);
+    root.left.left.left = new Node(2);
+    let tree = new BinaryTree(root);
+
+    console.log(breathFirst(tree));
+
+    expect(breathFirst(tree)).toBe('{10}->{5}->{3}->{2}->NULL');
+  });
+
+  it('if not empty tree and theres no right', () => {
+    let root = new Node(10);
+    root.left = new Node(5);
+    root.left.left = new Node(3);
+    root.left.left.left = new Node(2);
+    let tree = new BinaryTree(root);
+
+    console.log(breathFirst(tree));
+
+    /*
+          10
+        5
+      3
+    2
+    */
+
+    expect(breathFirst(tree)).toBe('{10}->{5}->{3}->{2}->NULL');
+  });
+
+  it('if not empty tree and theres right and left', () => {
+    let root = new Node(10);
+    root.left = new Node(5);
+    root.right = new Node(15);
+    root.left.left = new Node(3);
+    root.right.right = new Node(20);
+    root.right.left = new Node(14);
+    root.left.left.left = new Node(2);
+    let tree = new BinaryTree(root);
+
+    /*
+          10
+        5    15
+      3    14  20
+    2
+    */
+
+    console.log(breathFirst(tree));
+
+    expect(breathFirst(tree)).toBe('{10}->{5}->{15}->{3}->{14}->{20}->{2}->NULL');
   });
 });

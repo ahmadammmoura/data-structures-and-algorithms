@@ -7,4 +7,4 @@ Find the maximum value stored in the tree.
 #### theres alot of logic and i like it
 
 ## Solution
-i[img](./find.jpg)
+i[img](../img/find.jpg)
