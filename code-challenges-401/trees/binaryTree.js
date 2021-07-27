@@ -1,4 +1,6 @@
-"use strict";
+
+'use strict';
+// const Node = require('./node');
 class BinaryTree {
   constructor(root = null) {
     this.root = root;
@@ -36,14 +38,29 @@ class BinaryTree {
   }
 
   findMax() {
-    let current = this.root;
-    if (!current) return 'empty tree';
-    if (!current.right) return current.value;
-    while (current.right) {
-      current = current.right;
+    if(!this.root){
+      return 'empty tree';
     }
-    return current.value;
+    const arr = this.preOrder();
+    let node = arr[0];
+    arr.forEach(num =>{
+      if(num>node){
+        node = num;
+      }
+    });
+    return node;
   }
 }
+
+// let root = new Node(10);
+// root.left = new Node(5);
+// root.right = new Node(15);
+// root.left.left = new Node(3);
+// root.right.right = new Node(20);
+// root.right.left = new Node(188);
+// root.left.left.left = new Node(2);
+// let tree = new BinaryTree(root);
+
+// console.log(tree.findMax());
 
 module.exports = BinaryTree;
