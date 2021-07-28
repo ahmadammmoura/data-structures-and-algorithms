@@ -1,0 +1,17 @@
+{
+  "name": "k-ary-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Tree.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "watch": "jest --verbose --coverage --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "jest": "^27.0.6"
+  }
+}
