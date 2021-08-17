@@ -23,3 +23,10 @@ Create a Hash Table/Map and integrate Linked-List as data that goes in the Hash 
 ## uml 
 
 ![images](./challenges.jpg)
+
+## code challenges 32
+
+
+## uml 
+
+![images](./cha32.jpg)
