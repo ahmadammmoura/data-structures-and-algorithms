@@ -1,6 +1,7 @@
-const Hashmap = require('../hashTable').Hashmap;
+const {Hashmap,leftJoin} = require('../hashTable');
 const Tree = require('../../trees/binaryTree');
 const Node = require('../../trees/node');
+
 
 const case1 = 'Once upon a time, there was a brave princess who...';
 const case2 = 'It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...';
@@ -77,6 +78,40 @@ describe('Binary Tree Insertion', () => {
   expect(arr[3]).toBe(expected[3]);
   expect(arr[4]).toBe(expected[4]);
 });
+
+
+describe('join left tables ', () => {
+
+  test(' test case 1', () => {
+    const table1 = new Hashmap(5000);
+    const table2 = new Hashmap(5000);
+    table1.add('ahmad','barcelona');
+    table1.add('basel','real madrid');
+
+    table2.add('ahmad','messi');
+    table2.add('basel','ronaldo');
+
+    const matrix = [
+      [ 'ahmad', 'barcelona', 'messi' ],
+      [ 'basel', 'real madrid', 'ronaldo' ]
+    ];
+
+    expect(leftJoin(table1,table2)).toStrictEqual(matrix);
+
+  });
+
+  test(' test case 2', () => {
+    const table1 = '';
+    const table2 = new Hashmap();
+
+
+    expect(leftJoin(table1,table2)).toStrictEqual('one of the table dose nor exist');
+
+  });
+});
+
+
+
 
 
 
