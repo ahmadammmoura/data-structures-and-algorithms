@@ -149,9 +149,32 @@ function leftJoin(table1,table2){
   return joinData;
 }
 
-console.log(leftJoin(table1,table2));
 
 
+function mostWord(string){
+
+  const array = string.split(' ');
+  const table = new Hashmap(5000);
+
+  var currentLength;
+  var prevLength;
+  var Mostword;
+  for(let i=0 ; i < array.length ; i++){
+    table.add(array[i].toLowerCase(),array[i].toLowerCase());
+
+    currentLength = table.storage[table.code(array[i].toLowerCase())].length;
+    if(i>1){
+      prevLength = table.storage[table.code(array[i-1].toLowerCase())].length;
+    }
+    if(currentLength >= prevLength){
+      Mostword = table.storage[table.code(array[i].toLowerCase())].head.value;
+    }
+  }
+
+  return Object.values(Mostword)[0];
+}
+
+console.log(mostWord('Taco cat ate a taco'));
 
 
 
