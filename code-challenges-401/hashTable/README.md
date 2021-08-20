@@ -24,9 +24,18 @@ Create a Hash Table/Map and integrate Linked-List as data that goes in the Hash 
 
 ![images](./challenges.jpg)
 
-## code challenges 32
+## code challenges 32 (tree Intersection)
+
 
 
 ## uml 
 
 ![images](./cha32.jpg)
+
+
+## code challenges 33 (join left)
+
+
+## uml 
+
+![images](./joinleft.jpg)

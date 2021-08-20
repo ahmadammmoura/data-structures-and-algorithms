@@ -108,8 +108,75 @@ class Hashmap {
 }
 
 
+const table1 = new Hashmap(5000);
+const table2 = new Hashmap(5000);
+
+table1.add('ahmad','barcelona');
+table1.add('basel','real madrid');
+
+table2.add('ahmad','messi');
+table2.add('basel','ronaldo');
+
+
+
+function leftJoin(table1,table2){
+
+  if(!table2 || !table1) return 'one of the table dose nor exist';
+
+  function code(key) {
+    const sumCharAsci = key.split('').reduce((acc, char) => {
+      return acc + char.charCodeAt(0);
+    }, 0);
+    return (sumCharAsci * 13) % 5000;
+  }
+
+  // i am working on it
+  const joinData = [];
+
+  table1.storage.forEach((item)=>{
+    const key = Object.keys(item.head.value)[0];
+    const value = Object.values(item.head.value)[0];
+    const insideArr = [key,value];
+    const hash = code(key);
+    const join = Object.values(table2.storage[hash].head.value)[0];
+
+
+    join ? insideArr.push(join) : insideArr.push(null);
+
+    joinData.push(insideArr);
+  });
+
+  return joinData;
+}
+
+
+
+function mostWord(string){
+
+  const array = string.split(' ');
+  const table = new Hashmap(5000);
+
+  var currentLength;
+  var prevLength;
+  var Mostword;
+  for(let i=0 ; i < array.length ; i++){
+    table.add(array[i].toLowerCase(),array[i].toLowerCase());
+
+    currentLength = table.storage[table.code(array[i].toLowerCase())].length;
+    if(i>1){
+      prevLength = table.storage[table.code(array[i-1].toLowerCase())].length;
+    }
+    if(currentLength >= prevLength){
+      Mostword = table.storage[table.code(array[i].toLowerCase())].head.value;
+    }
+  }
+
+  return Object.values(Mostword)[0];
+}
+
+console.log(mostWord('Taco cat ate a taco'));
 
 
 
 
-module.exports = {Hashmap};
+module.exports = {Hashmap,leftJoin};
